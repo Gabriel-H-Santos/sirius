@@ -1,6 +1,7 @@
-export class InvalidTutorError extends Error {
+import { InvalidInputError } from '../../../../common/errors/domain.error';
+
+export class InvalidTutorError extends InvalidInputError {
   constructor(message: string) {
-    super(message);
-    this.name = 'InvalidTutorError';
+    super(message, 'INVALID_TUTOR');
   }
 }

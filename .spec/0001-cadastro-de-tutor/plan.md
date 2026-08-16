@@ -70,7 +70,7 @@ contrato do domínio.
 
 ### P4 — Use cases
 
-- [ ] concluído
+- [x] concluído
 - **Requisitos:** R1, R2, R4
 - **Arquivos:**
   - `apps/api/src/modules/identity/application/use-cases/register-tutor.use-case.ts`
@@ -82,11 +82,12 @@ ausência para a exceção de não encontrado.
 
 ### P5 — Borda HTTP
 
-- [ ] concluído
+- [x] concluído
 - **Requisitos:** R1, R2, R3, R4
 - **Arquivos:**
   - `apps/api/src/modules/identity/presentation/controllers/tutor.controller.ts`
   - `apps/api/src/modules/identity/presentation/dtos/register-tutor.dto.ts`
+  - `apps/api/src/modules/identity/presentation/mappers/tutor.mapper.ts`
   - `apps/api/src/modules/identity/identity.module.ts`
   - `apps/api/src/modules/identity/index.ts`
   - `apps/api/src/app.module.ts`

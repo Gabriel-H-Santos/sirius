@@ -51,13 +51,13 @@ convenções do [Guia-0003](../../docs/guides/0003-convencoes-de-banco.md).
 
 ## Critérios de aceite
 
-- [ ] `POST /tutors` válido responde `201` e o `GET /tutors/:id` devolve o que
+- [x] `POST /tutors` válido responde `201` e o `GET /tutors/:id` devolve o que
   foi criado (prova por `curl` no PR).
-- [ ] `POST /tutors` com o mesmo e-mail (mesmo variando maiúsculas) responde
+- [x] `POST /tutors` com o mesmo e-mail (mesmo variando maiúsculas) responde
   `409`.
-- [ ] `POST /tutors` com corpo inválido responde `400` com os campos rejeitados.
-- [ ] `GET /tutors/:id` inexistente responde `404`.
-- [ ] A migration da tabela aplica e reverte (`pnpm db:migrate` e o revert
+- [x] `POST /tutors` com corpo inválido responde `400` com os campos rejeitados.
+- [x] `GET /tutors/:id` inexistente responde `404`.
+- [x] A migration da tabela aplica e reverte (`pnpm db:migrate` e o revert
   provados no PR).
 - [ ] Os testes do use case cobrem R1 a R4 com dublê em memória do repositório.
 

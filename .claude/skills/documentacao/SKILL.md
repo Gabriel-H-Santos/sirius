@@ -5,9 +5,10 @@ description: Receita para criar ADRs, spikes e diagramas no padrão do projeto �
 
 # Criar documentação no padrão do projeto
 
-Três tipos, três papéis: o **spike** investiga e recomenda; a **ADR** decide; o
-**diagrama** mostra. Quando uma investigação sustenta uma decisão, o spike e a
-ADR se referenciam mutuamente (seções "Decisões derivadas" e "Referências").
+Quatro tipos, quatro papéis: o **spike** investiga e recomenda; a **ADR**
+decide; o **diagrama** mostra; o **guia** consolida a prática que as decisões
+implicam. Quando uma investigação sustenta uma decisão, o spike e a ADR se
+referenciam mutuamente (seções "Decisões derivadas" e "Referências").
 
 ## Regras comuns
 
@@ -36,6 +37,14 @@ ADR se referenciam mutuamente (seções "Decisões derivadas" e "Referências").
   data da consulta. Valor derivado ou sem fonte é [estimativa]. Número redondo
   honesto vale mais que precisão falsa.
 - A seção "O que ficou de fora" é obrigatória — omissão declarada.
+
+## Guia (`docs/guides/`)
+
+- Consolida prática recorrente; não decide nada — se um guia precisar afirmar
+  algo que não decorre de ADR existente, falta uma ADR.
+- Formato por conceito: definição em uma ou duas frases + "como aparece aqui"
+  apontando estrutura ou regra concreta do projeto. Definição sem aplicação é
+  enciclopédia, não guia.
 
 ## Diagrama (`docs/diagrams/`)
 

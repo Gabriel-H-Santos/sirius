@@ -45,6 +45,7 @@ mudança afeta foi atualizada no mesmo PR; e nenhum link relativo quebrou.
 apps/api/       API NestJS (módulos em quatro camadas — ADR-0006)
 docs/adrs/      decisões numeradas, com template
 docs/spikes/    investigações numeradas, com template
+docs/guides/    princípios e padrões aplicados — critério de revisão de código
 docs/diagrams/  diagramas Mermaid numerados, com identidade visual no template
 .spec/          especificações de feature: spec.md + plan.md antes do código
 ```

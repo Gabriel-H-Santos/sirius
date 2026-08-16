@@ -44,10 +44,11 @@ constraints nomeadas (`pk_`, `uq_`, `fk_`, `idx_`) conferidas no catálogo.
 
 ### P2 — Domínio
 
-- [ ] concluído
+- [x] concluído
 - **Requisitos:** R1
 - **Arquivos:**
   - `apps/api/src/modules/identity/domain/entities/tutor.entity.ts`
+  - `apps/api/src/modules/identity/domain/errors/invalid-tutor.error.ts`
   - `apps/api/src/modules/identity/domain/repositories/tutor.repository.ts`
 
 **Teste local:** `pnpm typecheck` — exit 0. Entidade pura com fábrica de
@@ -57,7 +58,7 @@ dentro do domínio); contrato do repositório com `save`, `findById` e
 
 ### P3 — Mapeamento e repositório
 
-- [ ] concluído
+- [x] concluído
 - **Requisitos:** R1, R2
 - **Arquivos:**
   - `apps/api/src/modules/identity/infra/persistence/tutor.schema.ts`

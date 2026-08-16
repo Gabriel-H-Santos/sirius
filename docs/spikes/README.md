@@ -21,3 +21,4 @@ Para criar um novo, copie o [template](0000-template.md).
 |---|---|---|
 | [0001](0001-custos-de-cloud-por-fase.md) | Custos de cloud por fase de entrega | Concluído |
 | [0002](0002-organizacao-interna-dos-modulos.md) | Organização interna dos módulos | Concluído |
+| [0003](0003-fluxo-de-ci-cd.md) | Fluxo de CI/CD e estratégia de branches | Concluído |

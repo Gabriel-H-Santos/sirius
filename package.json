@@ -10,8 +10,10 @@
     "dev": "pnpm --filter @sirius/api dev",
     "build": "pnpm -r build",
     "typecheck": "pnpm -r typecheck",
-    "db:up": "docker compose up -d --wait",
-    "db:down": "docker compose down",
-    "db:migrate": "pnpm --filter @sirius/api db:migrate"
+    "db:up": "docker compose up -d --wait postgres",
+    "db:migrate": "pnpm --filter @sirius/api db:migrate",
+    "infra:up": "docker compose up -d --build --wait",
+    "infra:logs": "docker logs -f sirius-api",
+    "infra:down": "docker compose down"
   }
 }

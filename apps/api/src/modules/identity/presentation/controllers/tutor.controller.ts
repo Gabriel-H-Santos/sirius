@@ -1,9 +1,9 @@
 import { Body, Controller, Get, HttpCode, HttpStatus, Param, Post } from '@nestjs/common';
-import { UuidParamPipe } from '../../../../common/pipes/uuid-param.pipe';
-import { GetTutorUseCase } from '../../application/use-cases/get-tutor.use-case';
-import { RegisterTutorUseCase } from '../../application/use-cases/register-tutor.use-case';
-import { RegisterTutorDto } from '../dtos/register-tutor.dto';
-import { toTutorResponse, TutorResponse } from '../mappers/tutor.mapper';
+import { UuidParamPipe } from '@common/pipes/uuid-param.pipe';
+import { GetTutorUseCase } from '@modules/identity/application/use-cases/get-tutor.use-case';
+import { RegisterTutorUseCase } from '@modules/identity/application/use-cases/register-tutor.use-case';
+import { RegisterTutorDto } from '@modules/identity/presentation/dtos/register-tutor.dto';
+import { toTutorResponse, TutorResponse } from '@modules/identity/presentation/mappers/tutor.mapper';
 
 @Controller('tutors')
 export class TutorController {

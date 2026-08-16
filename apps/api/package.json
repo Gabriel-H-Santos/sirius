@@ -4,11 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "nest start --watch",
-    "build": "nest build",
+    "build": "nest build -p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
     "start": "node dist/main.js",
     "typecheck": "tsc --noEmit",
     "db:migrate": "tsx ./node_modules/typeorm/cli.js -d src/database/datasource.ts migration:run",
-    "db:migrate:revert": "tsx ./node_modules/typeorm/cli.js -d src/database/datasource.ts migration:revert"
+    "db:migrate:revert": "tsx ./node_modules/typeorm/cli.js -d src/database/datasource.ts migration:revert",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage"
   },
   "dependencies": {
     "@nestjs/common": "^11.1.0",
@@ -25,10 +28,16 @@
     "zod": "^4.0.14"
   },
   "devDependencies": {
+    "@faker-js/faker": "^10.6.0",
     "@nestjs/cli": "^11.0.0",
     "@types/express": "^5.0.6",
+    "@types/jest": "^30.0.0",
     "@types/node": "^22.15.0",
     "@types/pg": "^8.15.0",
+    "fishery": "^2.4.0",
+    "jest": "^30.4.2",
+    "ts-jest": "^29.4.12",
+    "tsc-alias": "^1.9.1",
     "tsx": "^4.20.0",
     "typescript": "^5.9.2"
   }

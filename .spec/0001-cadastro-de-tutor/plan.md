@@ -97,19 +97,22 @@ ausência para a exceção de não encontrado.
 
 ### P6 — Testes (PR próprio)
 
-- [ ] concluído
+- [x] concluído
 - **Requisitos:** R1, R2, R3, R4
 - **Arquivos:**
-  - `apps/api/test/fakes/fake-tutor.repository.ts`
-  - `apps/api/test/modules/identity/register-tutor.use-case.spec.ts`
-  - `apps/api/test/modules/identity/get-tutor.use-case.spec.ts`
+  - `apps/api/test/factories/tutor.factory.ts`
+  - `apps/api/test/modules/identity/infra/repositories/fake-tutor.repository.ts`
+  - `apps/api/test/modules/identity/domain/entities/tutor.entity.spec.ts`
+  - `apps/api/test/modules/identity/application/use-cases/register-tutor.use-case.spec.ts`
+  - `apps/api/test/modules/identity/application/use-cases/get-tutor.use-case.spec.ts`
 
-Nasce junto com a ADR da ferramenta e da política de cobertura — a decisão de
-teste vira código no mesmo PR, como manda a regra da casa.
+Nasceu junto com a decisão da ferramenta
+([ADR-0011](../../docs/adrs/0011-jest-como-ferramenta-de-testes.md)) e a base
+transversal ([Spec-0003](../0003-base-de-testes/spec.md)).
 
 ### P-final — Verificação
 
-- [ ] concluído — todos os critérios de aceite da spec provados, `pnpm
+- [x] concluído — todos os critérios de aceite da spec provados, `pnpm
   typecheck && pnpm build` e a documentação afetada atualizada.
 
 ## Riscos

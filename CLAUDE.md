@@ -12,6 +12,9 @@ entrega faseada — fase atual: fundação. As decisões estruturais estão em
   inglês.
 - Código sem comentários — o nome explica; exceção só para restrição que o
   código não consegue mostrar.
+- Import por alias em `src` e `test` (`@modules`, `@common`, `@config`,
+  `@database`, `@factories`, `@test`); relativo só no `main.ts` e no
+  `app.module.ts` para arquivos da raiz de `src`.
 - Conventional Commits (`feat:`, `fix:`, `docs:`, `ci:`). Branch com prefixo por
   tipo (`feat/`, `fix/`, `docs/`, `ci/`).
 - Commits e PRs registram autoria humana; não incluir rodapés ou coautoria de
@@ -30,6 +33,7 @@ pnpm db:migrate     # migrations pendentes
 pnpm db:revert      # desfaz a última migration
 pnpm dev            # API em http://localhost:3000/health
 pnpm typecheck && pnpm build
+pnpm test           # suíte Jest; test:cov mede cobertura com portão
 pnpm infra:up       # stack completa em contêiner (API + banco)
 ```
 

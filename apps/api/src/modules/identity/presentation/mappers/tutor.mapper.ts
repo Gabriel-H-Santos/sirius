@@ -1,4 +1,4 @@
-import { Tutor } from '../../domain/entities/tutor.entity';
+import { Tutor } from '@modules/identity/domain/entities/tutor.entity';
 
 export interface TutorResponse {
   id: string;

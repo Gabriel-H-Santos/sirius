@@ -32,6 +32,10 @@ Na prática:
   módulo com perfil próprio e, se um dia precisar de processo separado, o caminho
   já está mapeado.
 
+O desenho do sistema está no
+[Diagrama-0004](../diagrams/0004-visao-macro.md) e a sequência de fases no
+[Diagrama-0005](../diagrams/0005-fases-de-entrega.md).
+
 ## Alternativas consideradas
 
 ### Microserviços desde o início

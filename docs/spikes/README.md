@@ -23,3 +23,4 @@ Para criar um novo, copie o [template](0000-template.md).
 | [0002](0002-organizacao-interna-dos-modulos.md) | Organização interna dos módulos | Concluído |
 | [0003](0003-fluxo-de-ci-cd.md) | Fluxo de CI/CD e estratégia de branches | Concluído |
 | [0004](0004-ia-no-fluxo-de-desenvolvimento.md) | IA no fluxo de desenvolvimento | Concluído |
+| [0005](0005-modelagem-de-dados-da-fase-1.md) | Modelagem de dados da fase 1 | Concluído |

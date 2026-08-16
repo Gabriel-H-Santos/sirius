@@ -23,4 +23,4 @@ Para criar uma nova, copie a pasta [0000-template](0000-template/).
 
 | # | Especificação | Estado |
 |---|---|---|
-| — | nenhuma ainda — a primeira será o módulo de cadastros | — |
+| [001](001-cadastro-de-tutor/spec.md) | Cadastro de tutor (módulo `identity`) | rascunho |

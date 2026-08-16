@@ -14,3 +14,4 @@ retroativa. Para escrever uma nova, copie o [template](0000-template.md).
 | [0003](0003-aws-como-nuvem.md) | AWS como nuvem, na região norte-americana | Aceita |
 | [0004](0004-postgresql-como-banco.md) | PostgreSQL como banco de dados | Aceita |
 | [0005](0005-typeorm-como-orm.md) | TypeORM como ORM, com migrations como fonte do schema | Aceita |
+| [0006](0006-estrutura-interna-dos-modulos.md) | Estrutura interna dos módulos: quatro camadas e superfície pública | Aceita |

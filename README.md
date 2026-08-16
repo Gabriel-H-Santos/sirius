@@ -43,6 +43,8 @@ apps/api/       API NestJS
 docs/adrs/      registros de decisão de arquitetura
 docs/spikes/    investigações numeradas que sustentam as decisões
 docs/diagrams/  diagramas numerados, em Mermaid
+.spec/          especificações de feature: spec e plano antes do código
+.claude/        contexto e receitas para desenvolvimento assistido por IA (ADR-0008)
 ```
 
 Toda decisão estrutural tem um registro em [`docs/adrs/`](docs/adrs/) — com as

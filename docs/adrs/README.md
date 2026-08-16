@@ -16,3 +16,4 @@ retroativa. Para escrever uma nova, copie o [template](0000-template.md).
 | [0005](0005-typeorm-como-orm.md) | TypeORM como ORM, com migrations como fonte do schema | Aceita |
 | [0006](0006-estrutura-interna-dos-modulos.md) | Estrutura interna dos módulos: quatro camadas e superfície pública | Aceita |
 | [0007](0007-fluxo-de-entrega.md) | GitHub Flow com imagem Docker validada no CI | Aceita |
+| [0008](0008-claude-como-par-de-desenvolvimento.md) | Claude Code como par de desenvolvimento, com harness versionado | Aceita |

@@ -21,5 +21,9 @@ pnpm dev        # API em http://localhost:3000/health
 ## Estrutura
 
 ```
-apps/api/   API NestJS
+apps/api/    API NestJS
+docs/adrs/   registros de decisão de arquitetura
 ```
+
+Toda decisão estrutural tem um registro em [`docs/adrs/`](docs/adrs/) — com as
+alternativas descartadas e o sinal que faria a decisão ser revista.

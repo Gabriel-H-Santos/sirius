@@ -1,11 +1,11 @@
 ---
 titulo: Cadastro de tutor
-estado: rascunho
+estado: em execução
 fase: 1
 modulo: identity
 ---
 
-# Spec-001: Cadastro de tutor
+# Spec-0001: Cadastro de tutor
 
 ## Problema
 
@@ -66,6 +66,10 @@ convenções do [Guia-0003](../../docs/guides/0003-convencoes-de-banco.md).
 - **Autenticação e login** — a decisão do mecanismo (serviço gerenciado versus
   implementação própria) é a próxima decisão estrutural da fase 1 e merece
   spike e ADR próprios antes de qualquer código.
+- **Fluxos de endereço do tutor** — a estrutura (`tutor_addresses`) nasce na
+  migration do módulo conforme a
+  [ADR-0010](../../docs/adrs/0010-tabelas-de-tutor-e-endereco.md); criar,
+  listar e alterar endereço entram em spec própria.
 - **Cadastro de pets e titularidade** — Spec-002, no módulo `pet-registry`.
 - **Atualização e exclusão de tutor** — entram quando houver fluxo que os
   exija; a exclusão em particular envolve o destino dos pets vinculados e

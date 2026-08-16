@@ -9,7 +9,7 @@
 ## Contexto
 
 A primeira migration está prestes a existir
-([Spec-001](../../.spec/001-cadastro-de-tutor/spec.md)), e chave primária é o
+([Spec-0001](../../.spec/0001-cadastro-de-tutor/spec.md)), e chave primária é o
 tipo de decisão que fica cara de mudar: ela vaza para toda foreign key, todo
 índice e toda URL pública. Convenção de nome tem o mesmo perfil — renomear
 tabela depois é migration de risco em produção. Decidir antes da primeira
@@ -22,6 +22,7 @@ tabela custa este spike; decidir depois custa retrabalho em cadeia.
 | Tabela | Módulo dono | Guarda |
 |---|---|---|
 | `tutors` | `identity` | a conta do tutor: nome, e-mail único |
+| `tutor_addresses` | `identity` | endereços do tutor, 1:N |
 | `pets` | `pet-registry` | a ficha do pet: espécie, raça, sexo, nascimento, medidas |
 | `tutors_pets` | `pet-registry` | a titularidade, N:N desde o primeiro dia |
 

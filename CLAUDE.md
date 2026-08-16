@@ -27,6 +27,7 @@ nvm use && pnpm install
 cp apps/api/.env.example apps/api/.env
 pnpm db:up          # PostgreSQL local
 pnpm db:migrate     # migrations pendentes
+pnpm db:revert      # desfaz a última migration
 pnpm dev            # API em http://localhost:3000/health
 pnpm typecheck && pnpm build
 pnpm infra:up       # stack completa em contêiner (API + banco)

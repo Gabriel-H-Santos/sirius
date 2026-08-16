@@ -18,9 +18,10 @@ antes de ele existir.
 - Chave primária sempre `id`, tipo `uuid`, v7 gerado na aplicação (ADR-0009).
 - Foreign key com o singular da tabela referenciada: `tutor_id`, `pet_id`.
 - Constraint e índice nomeados, nunca com o nome automático do banco — prefixo
-  por tipo, tabela e colunas: `uq_tutors_email`, `idx_pets_species`,
-  `fk_tutors_pets_tutor_id`. O nome aparece em erro de violação e em plano de
-  consulta; nome automático transforma esses momentos em adivinhação.
+  por tipo, tabela e colunas: `pk_tutors`, `uq_tutors_email`,
+  `idx_pets_species`, `fk_tutors_pets_tutor_id`. O nome aparece em erro de
+  violação e em plano de consulta; nome automático transforma esses momentos em
+  adivinhação.
 
 ## Colunas obrigatórias
 
@@ -43,9 +44,18 @@ entra por tabela, quando uma regra de negócio a pedir, registrada na spec.
 ## Migrations
 
 - São a única fonte do schema — `synchronize` desligado para sempre (ADR-0005).
-- Nome descreve o efeito: `create-tutors-table`, `add-idx-pets-species`.
-- Toda migration implementa o `down` de verdade e ele é provado junto com o
-  `up` no PR que a introduz.
+- Vivem em `apps/api/src/database/migrations/`, uma por efeito.
+- Nome no formato `<timestamp>-<efeito>.migration.ts`, com timestamp sequencial
+  reservado a partir de base fixa (`1790000000000`, passo `1000`) — a listagem
+  da pasta conta a história do schema na ordem, sem depender do relógio de quem
+  gerou. Classe `<Efeito><timestamp>`: `CreateTutors1790000000000`.
+- O `up` usa a API do ORM — `createTable` com `Table`, `TableIndex`, FK nomeada
+  na própria definição. `queryRunner.query` cru é exceção, só para o que a API
+  não expressa (extensão, tipo custom), com o motivo dito no PR.
+- PK nomeada via `primaryKeyConstraintName` na coluna; índice e FK nomeados na
+  definição — nada de nome automático.
+- Toda migration implementa o `down` de verdade, e o ciclo completo é provado
+  no PR que a introduz: `pnpm db:migrate`, `pnpm db:revert`, reaplicação.
 - Migration não carrega dado de negócio; carga e correção de dados são scripts
   à parte, com decisão registrada.
 

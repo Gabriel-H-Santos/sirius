@@ -18,3 +18,4 @@ retroativa. Para escrever uma nova, copie o [template](0000-template.md).
 | [0007](0007-fluxo-de-entrega.md) | GitHub Flow com imagem Docker validada no CI | Aceita |
 | [0008](0008-claude-como-par-de-desenvolvimento.md) | Claude Code como par de desenvolvimento, com harness versionado | Aceita |
 | [0009](0009-uuid-como-chave-primaria.md) | UUID v7 gerado na aplicação como chave primária | Aceita |
+| [0010](0010-tabelas-de-tutor-e-endereco.md) | Endereço do tutor em tabela própria | Aceita |

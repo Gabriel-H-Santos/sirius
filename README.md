@@ -5,12 +5,16 @@
 Plataforma de cuidado com pets: cadastro de tutores e animais, acompanhamento de
 saúde e, futuramente, monitoramento por coleira inteligente.
 
-O nome vem de α Canis Majoris, a *Dog Star* — a estrela cuja ascensão os egípcios
-liam como sinal periódico para prever a cheia do Nilo. Ler sinais de um cão e
-transformá-los em previsão útil é a tese do sistema.
+## Por que Sirius
 
-Monorepo com entrega faseada. Fase atual: **fundação** — a API sobe e responde; os
-módulos de negócio entram nas próximas fases.
+> **Sirius, α Canis Majoris — a Estrela do Cão.** A mais brilhante do céu
+> noturno, na constelação do Cão Maior. No Egito antigo, sua ascensão antes do
+> Sol marcava o momento de prever a cheia do Nilo: os egípcios observavam um
+> cão no céu para antecipar o que mais importava na terra.
+>
+> Observar sinais de um cão e transformá-los em previsão útil é a tese deste
+> sistema — hoje no cadastro e na ficha de saúde; adiante, na coleira que lê os
+> sinais vitais de verdade.
 
 ## Rodando
 
@@ -21,6 +25,7 @@ cp apps/api/.env.example apps/api/.env
 pnpm db:up      # PostgreSQL local via docker compose
 pnpm db:migrate # aplica as migrations pendentes
 pnpm dev        # API em http://localhost:3000/health
+pnpm test       # suíte de testes (test:cov mede cobertura com portão)
 ```
 
 O `/health` verifica a conexão com o banco: responde `200` com tudo de pé e `503`
@@ -36,20 +41,41 @@ pnpm infra:logs   # acompanha a API
 pnpm infra:down   # derruba tudo
 ```
 
+## Arquitetura
+
+Monólito modular (NestJS) entregue em quatro fases — cada fase liga módulos
+novos sem reescrever os anteriores. A decisão e as alternativas estão na
+[ADR-0002](docs/adrs/0002-monolito-modular-com-entrega-faseada.md), que aponta
+para os dois desenhos que resumem o sistema: a
+[visão macro](docs/diagrams/0004-visao-macro.md) e as
+[fases de entrega](docs/diagrams/0005-fases-de-entrega.md).
+
+Toda decisão estrutural tem registro numerado, com alternativas descartadas e o
+sinal que faria a decisão ser revista. A trilha de leitura sugerida:
+
+1. [`docs/adrs/`](docs/adrs/) — as decisões, em ordem;
+2. [`docs/spikes/`](docs/spikes/) — as investigações que as sustentam;
+3. [`docs/guides/`](docs/guides/) — princípios e padrões aplicados ao código;
+4. [`.spec/`](.spec/) — as features, da especificação ao plano executado;
+5. [`docs/diagrams/`](docs/diagrams/) — os desenhos, fonte única referenciada
+   pelos documentos acima.
+
 ## Estrutura
 
 ```
-apps/api/       API NestJS
+apps/api/       API NestJS (módulos em quatro camadas)
 docs/adrs/      registros de decisão de arquitetura
 docs/spikes/    investigações numeradas que sustentam as decisões
 docs/guides/    princípios e padrões de código aplicados ao projeto
 docs/diagrams/  diagramas numerados, em Mermaid
 .spec/          especificações de feature: spec e plano antes do código
-.claude/        contexto e receitas para desenvolvimento assistido por IA (ADR-0008)
+.claude/        contexto e receitas para desenvolvimento assistido por IA
 ```
 
-Toda decisão estrutural tem um registro em [`docs/adrs/`](docs/adrs/) — com as
-alternativas descartadas e o sinal que faria a decisão ser revista. O fluxo de
-trabalho (branches, PR, CI) está na
-[ADR-0007](docs/adrs/0007-fluxo-de-entrega.md), com os desenhos em
-[`docs/diagrams/`](docs/diagrams/).
+## Próximos passos
+
+A fase 1 está com o primeiro módulo completo (`identity`: migration, domínio,
+borda HTTP com tratamento de erros, testes). O plano do que vem a seguir — as
+fases do produto e o backlog de engenharia (lint, hooks de commit,
+observabilidade, travas de fronteira), cada item com o gatilho que o traz —
+está em [docs/proximos-passos.md](docs/proximos-passos.md).

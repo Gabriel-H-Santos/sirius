@@ -10,6 +10,8 @@
     "dev": "pnpm --filter @sirius/api dev",
     "build": "pnpm -r build",
     "typecheck": "pnpm -r typecheck",
+    "test": "pnpm --filter @sirius/api test",
+    "test:cov": "pnpm --filter @sirius/api test:cov",
     "db:up": "docker compose up -d --wait postgres",
     "db:migrate": "pnpm --filter @sirius/api db:migrate",
     "db:revert": "pnpm --filter @sirius/api db:migrate:revert",

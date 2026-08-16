@@ -1,6 +1,6 @@
 ---
 titulo: Cadastro de tutor
-estado: em execução
+estado: concluída
 fase: 1
 modulo: identity
 ---
@@ -59,7 +59,7 @@ convenções do [Guia-0003](../../docs/guides/0003-convencoes-de-banco.md).
 - [x] `GET /tutors/:id` inexistente responde `404`.
 - [x] A migration da tabela aplica e reverte (`pnpm db:migrate` e o revert
   provados no PR).
-- [ ] Os testes do use case cobrem R1 a R4 com dublê em memória do repositório.
+- [x] Os testes do use case cobrem R1 a R4 com dublê em memória do repositório.
 
 ## Fora de escopo
 

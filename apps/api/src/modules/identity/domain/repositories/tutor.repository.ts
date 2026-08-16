@@ -1,4 +1,4 @@
-import { Tutor } from '../entities/tutor.entity';
+import { Tutor } from '@modules/identity/domain/entities/tutor.entity';
 
 export const TUTOR_REPOSITORY = Symbol('TUTOR_REPOSITORY');
 

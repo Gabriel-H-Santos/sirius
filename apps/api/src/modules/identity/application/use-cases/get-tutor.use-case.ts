@@ -1,6 +1,6 @@
-import { Tutor } from '../../domain/entities/tutor.entity';
-import { TutorNotFoundError } from '../../domain/errors/tutor-not-found.error';
-import { TutorRepository } from '../../domain/repositories/tutor.repository';
+import { Tutor } from '@modules/identity/domain/entities/tutor.entity';
+import { TutorNotFoundError } from '@modules/identity/domain/errors/tutor-not-found.error';
+import { TutorRepository } from '@modules/identity/domain/repositories/tutor.repository';
 
 export class GetTutorUseCase {
   constructor(private readonly tutors: TutorRepository) {}

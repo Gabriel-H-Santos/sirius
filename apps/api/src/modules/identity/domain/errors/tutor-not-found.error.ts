@@ -1,4 +1,4 @@
-import { NotFoundError } from '../../../../common/errors/domain.error';
+import { NotFoundError } from '@common/errors/domain.error';
 
 export class TutorNotFoundError extends NotFoundError {
   constructor(id: string) {

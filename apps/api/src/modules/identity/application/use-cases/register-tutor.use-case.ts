@@ -1,6 +1,6 @@
-import { Tutor } from '../../domain/entities/tutor.entity';
-import { EmailAlreadyRegisteredError } from '../../domain/errors/email-already-registered.error';
-import { TutorRepository } from '../../domain/repositories/tutor.repository';
+import { Tutor } from '@modules/identity/domain/entities/tutor.entity';
+import { EmailAlreadyRegisteredError } from '@modules/identity/domain/errors/email-already-registered.error';
+import { TutorRepository } from '@modules/identity/domain/repositories/tutor.repository';
 
 export interface RegisterTutorInput {
   name: string;

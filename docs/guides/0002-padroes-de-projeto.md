@@ -43,7 +43,8 @@ O dublê de teste da casa: uma implementação em memória do contrato do domín
 com asserção sobre **estado** (o que ficou gravado), não sobre interação (quais
 métodos foram chamados). Testa comportamento, não implementação — refatorar o
 use case sem mudar o resultado não quebra teste. A ferramenta e a política de
-cobertura terão ADR própria quando os primeiros testes entrarem.
+cobertura estão na
+[ADR-0011](../adrs/0011-jest-como-ferramenta-de-testes.md).
 
 ## Entram com as próximas fases
 

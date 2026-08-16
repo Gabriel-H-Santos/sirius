@@ -1,6 +1,6 @@
 import { existsSync } from 'node:fs';
 import { DataSource } from 'typeorm';
-import { validateEnv } from '../config/env';
+import { validateEnv } from '@config/env';
 
 if (existsSync('.env')) {
   process.loadEnvFile();

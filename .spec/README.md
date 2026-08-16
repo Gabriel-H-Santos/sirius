@@ -23,5 +23,6 @@ Para criar uma nova, copie a pasta [0000-template](0000-template/).
 
 | # | Especificação | Estado |
 |---|---|---|
-| [0001](0001-cadastro-de-tutor/spec.md) | Cadastro de tutor (módulo `identity`) | em execução |
+| [0001](0001-cadastro-de-tutor/spec.md) | Cadastro de tutor (módulo `identity`) | concluída |
 | [0002](0002-tratamento-de-erros-na-borda/spec.md) | Tratamento de erros na borda (transversal) | concluída |
+| [0003](0003-base-de-testes/spec.md) | Base de testes unitários (transversal) | concluída |

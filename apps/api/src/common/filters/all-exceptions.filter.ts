@@ -14,7 +14,7 @@ import {
   DomainError,
   InvalidInputError,
   NotFoundError,
-} from '../errors/domain.error';
+} from '@common/errors/domain.error';
 
 @Catch()
 export class AllExceptionsFilter implements ExceptionFilter {

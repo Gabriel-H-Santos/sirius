@@ -1,1 +1,1 @@
-export { IdentityModule } from './identity.module';
+export { IdentityModule } from '@modules/identity/identity.module';

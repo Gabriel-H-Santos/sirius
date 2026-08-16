@@ -1,5 +1,5 @@
 import { v7 as uuidv7 } from 'uuid';
-import { InvalidTutorError } from '../errors/invalid-tutor.error';
+import { InvalidTutorError } from '@modules/identity/domain/errors/invalid-tutor.error';
 
 const NAME_MIN_LENGTH = 2;
 const NAME_MAX_LENGTH = 120;

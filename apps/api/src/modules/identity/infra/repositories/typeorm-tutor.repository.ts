@@ -1,8 +1,8 @@
 import { QueryFailedError, Repository } from 'typeorm';
-import { Tutor } from '../../domain/entities/tutor.entity';
-import { EmailAlreadyRegisteredError } from '../../domain/errors/email-already-registered.error';
-import { TutorRepository } from '../../domain/repositories/tutor.repository';
-import { TutorRow } from '../persistence/tutor.schema';
+import { Tutor } from '@modules/identity/domain/entities/tutor.entity';
+import { EmailAlreadyRegisteredError } from '@modules/identity/domain/errors/email-already-registered.error';
+import { TutorRepository } from '@modules/identity/domain/repositories/tutor.repository';
+import { TutorRow } from '@modules/identity/infra/persistence/tutor.schema';
 
 const UNIQUE_EMAIL_CONSTRAINT = 'uq_tutors_email';
 

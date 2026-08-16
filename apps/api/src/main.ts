@@ -5,6 +5,7 @@ import type { EnvConfig } from './config/env';
 
 async function bootstrap(): Promise<void> {
   const app = await NestFactory.create(AppModule);
+  app.enableShutdownHooks();
   const config = app.get(ConfigService<EnvConfig, true>);
   await app.listen(config.get('PORT', { infer: true }));
 }

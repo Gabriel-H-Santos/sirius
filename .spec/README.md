@@ -11,7 +11,7 @@ configuração — esses seguem direto pelo fluxo normal de PR.
 
 Regras:
 
-- Pasta `NNN-slug-curto/` com numeração sequencial; nunca reusar número.
+- Pasta `NNNN-slug-curto/` com numeração sequencial de quatro dígitos; nunca reusar número.
 - O `spec.md` diz **o quê** e **por quê**; o `plan.md` diz **como** e **em que
   ordem**. Requisito sem critério de aceite verificável não está pronto.
 - O estado vive no frontmatter do `spec.md` (`rascunho`, `em execução`,
@@ -23,4 +23,4 @@ Para criar uma nova, copie a pasta [0000-template](0000-template/).
 
 | # | Especificação | Estado |
 |---|---|---|
-| [001](001-cadastro-de-tutor/spec.md) | Cadastro de tutor (módulo `identity`) | rascunho |
+| [0001](0001-cadastro-de-tutor/spec.md) | Cadastro de tutor (módulo `identity`) | em execução |

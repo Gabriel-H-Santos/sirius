@@ -23,3 +23,4 @@ vierem a usá-los.
 |---|---|---|
 | [0001](0001-fluxo-de-branches.md) | Fluxo de branches | [ADR-0007](../adrs/0007-fluxo-de-entrega.md) |
 | [0002](0002-caminho-de-um-pr.md) | Caminho de um PR até a main | [ADR-0007](../adrs/0007-fluxo-de-entrega.md) |
+| [0003](0003-modelo-de-dados-identity.md) | Modelo de dados do módulo identity | [ADR-0010](../adrs/0010-tabelas-de-tutor-e-endereco.md) |

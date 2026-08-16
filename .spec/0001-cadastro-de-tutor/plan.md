@@ -1,4 +1,4 @@
-# Plano — Spec-001: Cadastro de tutor
+# Plano — Spec-0001: Cadastro de tutor
 
 ## Decisões de origem
 
@@ -6,9 +6,11 @@ A modelagem não se decide aqui — ela decorre de:
 [ADR-0006](../../docs/adrs/0006-estrutura-interna-dos-modulos.md) (entidade
 pura, mapeamento na infra),
 [ADR-0009](../../docs/adrs/0009-uuid-como-chave-primaria.md) (UUID v7 gerado
-na aplicação com a lib `uuid`) e
+na aplicação com a lib `uuid`),
+[ADR-0010](../../docs/adrs/0010-tabelas-de-tutor-e-endereco.md) (tabelas
+`tutors` e `tutor_addresses`) e
 [Guia-0003](../../docs/guides/0003-convencoes-de-banco.md) (nomes, colunas
-obrigatórias, migration reversível).
+obrigatórias, modelo de migration).
 
 ## Decisões de implementação
 
@@ -28,7 +30,19 @@ mais consumidores, a mudança nasce com ADR.
 
 ## Passos
 
-### P1 — Domínio
+### P1 — Migrations
+
+- [x] concluído
+- **Requisitos:** R1, R2
+- **Arquivos:**
+  - `apps/api/src/database/migrations/1790000000000-create-tutors.migration.ts`
+  - `apps/api/src/database/migrations/1790000001000-create-tutor-addresses.migration.ts`
+
+**Teste local:** `pnpm db:up && pnpm db:migrate` aplica; `pnpm db:revert` (2×)
+desfaz; reaplicação limpa. Tabelas conforme a ADR-0010 e o Guia-0003 —
+constraints nomeadas (`pk_`, `uq_`, `fk_`, `idx_`) conferidas no catálogo.
+
+### P2 — Domínio
 
 - [ ] concluído
 - **Requisitos:** R1
@@ -41,21 +55,19 @@ criação (id v7 via lib `uuid`, normalização de e-mail e validação de nome
 dentro do domínio); contrato do repositório com `save`, `findById` e
 `findByEmail`. A dependência `uuid` entra neste passo.
 
-### P2 — Persistência
+### P3 — Mapeamento e repositório
 
 - [ ] concluído
 - **Requisitos:** R1, R2
 - **Arquivos:**
   - `apps/api/src/modules/identity/infra/persistence/tutor.schema.ts`
   - `apps/api/src/modules/identity/infra/repositories/typeorm-tutor.repository.ts`
-  - `apps/api/src/database/migrations/*-create-tutors-table.ts`
 
-**Teste local:** `pnpm db:up && pnpm db:migrate` aplica; o revert desfaz.
-Tabela `tutors` conforme o
-[Guia-0003](../../docs/guides/0003-convencoes-de-banco.md): `id` uuid,
-`created_at`/`updated_at`, índice único nomeado `uq_tutors_email`.
+**Teste local:** `pnpm typecheck` — exit 0. `EntitySchema` traduzindo
+`camelCase` da entidade para `snake_case` das colunas; adapter implementando o
+contrato do domínio.
 
-### P3 — Use cases
+### P4 — Use cases
 
 - [ ] concluído
 - **Requisitos:** R1, R2, R4
@@ -67,7 +79,7 @@ Tabela `tutors` conforme o
 normalizado e traduz duplicidade para a exceção de conflito; `get` traduz
 ausência para a exceção de não encontrado.
 
-### P4 — Borda HTTP
+### P5 — Borda HTTP
 
 - [ ] concluído
 - **Requisitos:** R1, R2, R3, R4
@@ -81,7 +93,7 @@ ausência para a exceção de não encontrado.
 **Teste local:** `pnpm dev` e os quatro `curl` dos critérios de aceite
 (201, 409, 400, 404) com as respostas coladas no PR.
 
-### P5 — Testes (PR próprio)
+### P6 — Testes (PR próprio)
 
 - [ ] concluído
 - **Requisitos:** R1, R2, R3, R4

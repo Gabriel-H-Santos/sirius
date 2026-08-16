@@ -15,8 +15,14 @@ módulos de negócio entram nas próximas fases.
 ```bash
 nvm use
 pnpm install
+cp apps/api/.env.example apps/api/.env
+pnpm db:up      # PostgreSQL local via docker compose
+pnpm db:migrate # aplica as migrations pendentes
 pnpm dev        # API em http://localhost:3000/health
 ```
+
+O `/health` verifica a conexão com o banco: responde `200` com tudo de pé e `503`
+se o banco estiver fora.
 
 ## Estrutura
 

@@ -1,5 +1,7 @@
 # Sirius
 
+![ci](https://github.com/Gabriel-H-Santos/sirius/actions/workflows/ci.yml/badge.svg)
+
 Plataforma de cuidado com pets: cadastro de tutores e animais, acompanhamento de
 saúde e, futuramente, monitoramento por coleira inteligente.
 
